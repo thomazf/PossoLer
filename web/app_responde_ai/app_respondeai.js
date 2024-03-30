@@ -300,8 +300,8 @@ function mountVideoDescriptionData(videoConfig, coveredTopics, indexConfig) {
         let topicsBlock = "";
 
         coveredTopics.forEach((topic)=> {
-            topicsBlock += `<li class="sc-eQubti hpGpQ">
-                <span class="sc-iTLKXn guGmfJ">
+            topicsBlock += `<li class="sc-eQubti" style="display: flex !important; -webkit-box-pack: justify !important; justify-content: space-between !important; -webkit-box-align: center !important; align-items: center !important; height: 30px !important;">
+                <span class="sc-iTLKXn" style="display: flex !important; -webkit-box-pack: justify !important; justify-content: space-between !important; -webkit-box-align: center !important; align-items: center !important;">
                     <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24" class="sc-lmgjyN iRXdY" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6 6C6 5.44772 6.44772 5 7 5H17C17.5523 5 18 5.44772 18 6C18 6.55228 17.5523 7 17 7H7C6.44771 7 6 6.55228 6 6Z" fill="currentColor"></path>
                         <path d="M6 10C6 9.44771 6.44772 9 7 9H17C17.5523 9 18 9.44771 18 10C18 10.5523 17.5523 11 17 11H7C6.44771 11 6 10.5523 6 10Z" fill="currentColor"></path>
@@ -311,23 +311,23 @@ function mountVideoDescriptionData(videoConfig, coveredTopics, indexConfig) {
                     </svg>
                     <span>${topic.name}</span>
                 </span>
-                <div class="sc-fXUGxx hNOlID">
-                    <a class="sc-iTlrqL hoTtMg" href="/aprender/topico/${topic.subjectId}/${topic.id}/teoria/${topic.theoryId}">Aprender +</a>
-                    <a class="sc-iTlrqL kSVlCQ" href="/aprender/topico/${topic.subjectId}/${topic.id}/exercicio/${topic.firstExerciseId}">Praticar +</a>
+                <div class="sc-fXUGxx" style="height: 100% !important; margin-right: 10px !important; position: relative !important;">
+                    <a class="sc-iTlrqL" style="display: inline-block !important; width: 110px !important; height: 26px !important; text-align: center !important; border: 1px solid rgb(221, 221, 221) !important; color: inherit !important; text-decoration: none !important; font-size: 0.9em !important; margin: 2px !important; line-height: 24px !important; cursor: pointer !important;" href="/aprender/topico/${topic.subjectId}/${topic.id}/teoria/${topic.theoryId}">Aprender +</a>
+                    <a class="sc-iTlrqL" style="display: inline-block !important; width: 110px !important; height: 26px !important; text-align: center !important; border: 1px solid rgb(221, 221, 221) !important; color: inherit !important; text-decoration: none !important; font-size: 0.9em !important; margin: 2px !important; line-height: 24px !important; cursor: pointer !important;" href="/aprender/topico/${topic.subjectId}/${topic.id}/exercicio/${topic.firstExerciseId}">Praticar +</a>
                 </div>
             </li>`
         });
 
-        return `<div class="sc-lmwPYW ctgldi">
+        return `<div class="sc-lmwPYW" style="min-height: 300px !important; width: 100% !important; padding: 30px !important;">
             ${mountVideoTipsLabel()}
-            <div class="sc-htnqrb bgWLgJ">
-                <div class="sc-bRyDhe iBIOYD">
-                    <div class="sc-hQrNYi fikJbk">${indexConfig}</div>
-                    <div class="sc-hHRaiR ihPhZF">${videoConfig.name}</div>
+            <div class="sc-htnqrb" style="display: flex !important; -webkit-box-pack: justify !important; justify-content: space-between !important;">
+                <div class="sc-bRyDhe" style="font-size: 1.2em !important; color: rgb(249, 172, 62) !important; display: flex !important;">
+                    <div class="sc-hQrNYi" style="width: 38px !important; height: 38px !important; border-radius: 50% !important; font-size: 1.2em !important; font-weight: bold !important; color: rgb(255, 255, 255) !important; background: rgb(249, 172, 62) !important; margin: 0px 10px 0px -10px !important; display: flex !important; -webkit-box-align: center !important; align-items: center !important; -webkit-box-pack: center !important; justify-content: center !important;">${indexConfig}</div>
+                    <div class="sc-hHRaiR" style="font-size: 1.2em !important; color: rgb(249, 172, 62) !important; line-height: 38px; !important">${videoConfig.name}</div>
                 </div>
             </div>
             <div class="sc-muxYx hbjZIk">
-                <div class="sc-fWMzbn eIkLbq">Tópicos abordados no módulo ${indexConfig}</div>
+                <div class="sc-fWMzbn" style="font-size: 0.7em !important; color: rgb(51, 51, 51) !important; text-transform: uppercase !important; margin: 30px 0px 10px !important;">Tópicos abordados no módulo ${indexConfig}</div>
                 <ul class="sc-isojaI etwdzZ">
                     ${topicsBlock}
                 </ul>
