@@ -1,13 +1,10 @@
 // ==UserScript==
 // @name         Posso Ler?
 // @namespace    URL
-// @version      2.9.8
+// @version      2.10.0
 // @description  Tenha acesso a noticias ilimitadas e conteudos exclusivos de forma gratuita e segura
 // @author       snowom
-// @supportURL   https://possoler.tech/
-// @icon         https://possoler.tech/API/getCDN?file=possolerlogo
-// @match        *://possoler.tech/*
-// @match        *://*.possoler.tech/*
+// @supportURL   https://github.com/snowom/PossoLer
 // @match        *://*.folha.uol.com.br/*
 // @match        *://*.estadao.com.br/*
 // @match        *://*.oglobo.globo.com/*
@@ -59,29 +56,29 @@
 // @match        *://*.uol.com.br/*
 // @match        *://vocesa.abril.com.br/*
 // @require      https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js
-// @require      https://possoler.tech/API/getCDN?file=snackjs
-// @require      https://possoler.tech/API/getCDN?file=blockCorePaywall
-// @require      https://possoler.tech/API/getCDN?file=glidejs
-// @require      https://possoler.tech/API/getCDN?file=app_respondeai
-// @require      https://possoler.tech/API/getCDN?file=respondeai
-// @require      https://possoler.tech/API/getCDN?file=valorecon
-// @require      https://possoler.tech/API/getCDN?file=exame
-// @require      https://possoler.tech/API/getCDN?file=jota
-// @require      https://possoler.tech/API/getCDN?file=nytimes
-// @require      https://possoler.tech/API/getCDN?file=elpais
-// @require      https://possoler.tech/API/getCDN?file=gauchazh
-// @require      https://possoler.tech/API/getCDN?file=opopular
-// @require      https://possoler.tech/API/getCDN?file=diariosm
-// @require      https://possoler.tech/API/getCDN?file=otempomg
-// @require      https://possoler.tech/API/getCDN?file=jornaldocomercio
-// @require      https://possoler.tech/API/getCDN?file=opovo
-// @require      https://possoler.tech/API/getCDN?file=gaz
-// @require      https://possoler.tech/API/getCDN?file=possoler
-// @require      https://possoler.tech/API/getCDN?file=att_versao
-// @require      https://possoler.tech/API/getCDN?file=check_messages
-// @require      https://possoler.tech/API/getCDN?file=count_content
-// @require      https://possoler.tech/API/getCDN?file=save_site_access
-// @require      https://possoler.tech/API/getCDN?file=block_request
+// @require      http://localhost:8080/API/getCDN?file=snackjs
+// @require      http://localhost:8080/API/getCDN?file=blockCorePaywall
+// @require      http://localhost:8080/API/getCDN?file=glidejs
+// @require      http://localhost:8080/API/getCDN?file=app_respondeai
+// @require      http://localhost:8080/API/getCDN?file=respondeai
+// @require      http://localhost:8080/API/getCDN?file=valorecon
+// @require      http://localhost:8080/API/getCDN?file=exame
+// @require      http://localhost:8080/API/getCDN?file=jota
+// @require      http://localhost:8080/API/getCDN?file=nytimes
+// @require      http://localhost:8080/API/getCDN?file=elpais
+// @require      http://localhost:8080/API/getCDN?file=gauchazh
+// @require      http://localhost:8080/API/getCDN?file=opopular
+// @require      http://localhost:8080/API/getCDN?file=diariosm
+// @require      http://localhost:8080/API/getCDN?file=otempomg
+// @require      http://localhost:8080/API/getCDN?file=jornaldocomercio
+// @require      http://localhost:8080/API/getCDN?file=opovo
+// @require      http://localhost:8080/API/getCDN?file=gaz
+// @require      http://localhost:8080/API/getCDN?file=possoler
+// @require      http://localhost:8080/API/getCDN?file=att_versao
+// @require      http://localhost:8080/API/getCDN?file=check_messages
+// @require      http://localhost:8080/API/getCDN?file=count_content
+// @require      http://localhost:8080/API/getCDN?file=save_site_access
+// @require      http://localhost:8080/API/getCDN?file=block_request
 // @grant        GM_webRequest
 // @grant        GM_setValue
 // @grant        GM_getValue
@@ -343,7 +340,7 @@ function importCDNSnackBar()
     snackCSS.setAttribute('id','snackCSS');
     snackCSS.setAttribute('rel','stylesheet');
     snackCSS.setAttribute('type','text/css');
-    snackCSS.setAttribute('href','https://possoler.tech/API/getCDN?file=snackcss');
+    snackCSS.setAttribute('href','http://localhost:8080/API/getCDN?file=snackcss');
     document.head.appendChild(snackCSS);
 
     //ADD CSS CLASSE SNACKBAR
