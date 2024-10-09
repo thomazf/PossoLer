@@ -38,11 +38,11 @@
 * [New York Times](https://www.nytimes.com/)
 * [El País](http://elpais.com/)
 * [Jornal VS](https://www.jornalvs.com.br/)
-* [Valor Econômico](https://valor.globo.com/) - Ler sobre <i>**Cache Mock**</i> na seção de <i>Perguntas Frequentes</i>
+* <s> [Valor Econômico](https://valor.globo.com/) - Ler sobre <i>**Cache Mock**</i> na seção de <i>Perguntas Frequentes</i></s>
 * [GaúchaZH](https://gauchazh.clicrbs.com.br/)
 * [Jornal do Comércio](https://www.jornaldocomercio.com/)
 * [The Economist](https://www.economist.com/)
-* [O Popular](https://www.opopular.com.br/) - Ler sobre <i>**Cache Mock**</i> na seção de <i>Perguntas Frequentes</i>
+* <s> [O Popular](https://www.opopular.com.br/) - Ler sobre <i>**Cache Mock**</i> na seção de <i>Perguntas Frequentes</i></s>
 * [Diário de Santa Maria](https://diariosm.com.br/)
 * [O Tempo - Minas Gerais](https://www.otempo.com.br/)
 * [Revista Glamour](https://revistaglamour.globo.com/)
@@ -57,7 +57,7 @@
 * [Correio do Povo](https://www.correiodopovo.com.br/)
 * [Revista Casa e Jardim](https://revistacasaejardim.globo.com/)
 * [Veja Saude](https://saude.abril.com.br/)
-* [GAZ](https://www.gaz.com.br/) - Ler sobre <i>**Cache Mock**</i> na seção de <i>Perguntas Frequentes</i>
+* <s>[GAZ](https://www.gaz.com.br/) - Ler sobre <i>**Cache Mock**</i> na seção de <i>Perguntas Frequentes</i></s>
 * [Uol Tab](https://tab.uol.com.br/)
 * [Sempre Familia](https://www.semprefamilia.com.br/)
 * [Você SA](https://vocesa.abril.com.br/)
