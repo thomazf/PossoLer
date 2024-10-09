@@ -87,153 +87,149 @@
 // @noframes
 // ==/UserScript==
 
+const DOMAIN = "http://localhost:8080";
 importCDNSnackBar();
 let currentURL = window.location.hostname;
-const DOMAIN = "http://localhost:8080";
-const CURRENT_VERSION = '298';
 
 
-function main()
-{
-    if(currentURL.includes("folha.uol.com.br")){
-        blockPaywallRequest("*://paywall.folha.uol.com.br/*");
+if(currentURL.includes("folha.uol.com.br")){
+    blockPaywallRequest("*://paywall.folha.uol.com.br/*");
 
-    }else if(currentURL.includes("estadao.com.br")){
-        blockPaywallRequest("*://acesso.estadao.com.br/paywall*");
+}else if(currentURL.includes("estadao.com.br")){
+    blockPaywallRequest("*://acesso.estadao.com.br/paywall*");
 
-    }else if(currentURL.includes("oglobo.globo.com") && !(window.location.href.includes("/epoca"))){
-        blockPaywallRequest("*://static.infoglobo.com.br/paywall/js/tiny.js");
-    }
-    else if(currentURL.includes("gazetadopovo.com.br")){
-        blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
-    }
-    else if(currentURL.includes("super.abril.com.br")){
-        blockPaywallRequest("*://super.abril.com.br/wp-content/plugins/abril-plugins/abril-paywall/js/*");
-    }
-    else if(currentURL.includes("quatrorodas.abril.com.br")){
-        blockPaywallRequest("*://quatrorodas.abril.com.br/wp-content/plugins/abril-plugins/abril-paywall/js/*")
-    }
-    else if(currentURL.includes("veja.abril.com.br") || (currentURL.includes("vejasp.abril"))){
-        blockPaywallRequest("*://veja.abril.com.br/wp-content/plugins/abril-plugins/abril-paywall/js/*")
-    }
-    else if(currentURL.includes("guiadoestudante.abril.com.br")){
-        blockPaywallRequest("*://guiadoestudante.abril.com.br/wp-content/plugins/abril-plugins/abril-paywall/js/*");
-    }
-    else if(currentURL.includes("exame.com")){
-        blockPaywallRequest("*://exame.com/wp-content/themes/exame-new/js/extd-acc.js*");
-        modifyEXAME();
-    }
-    else if(currentURL.includes("oglobo.globo.com") && window.location.href.includes("/epoca")){
-        //MIGROU PARA O DOMINIO OGLOBO.COM
-        blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
-    }
-    else if(currentURL.includes("revistagalileu.globo.com")){
-        blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
-    }
-    else if(currentURL.includes("epocanegocios.globo.com")){
-        blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
-    }
-    else if(currentURL.includes("revistamarieclaire.globo.com")){
-        blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
-    }
-    else if(currentURL.includes("globorural.globo.com")){
-        blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
-    }
-    else if(currentURL.includes("revistapegn.globo.com")){
-        blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
-    }
-    else if(currentURL.includes("jota.info")){
-        modifyJOTA();
-    }
-    else if(currentURL.includes("nsctotal.com.br")){
-        blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
-    }
-    else if(currentURL.includes("nytimes.com")){
-        modifyNYTIMES();
-    }
-    else if(currentURL.includes("elpais.com")){
-        blockPaywallRequest("*://*/arc/subs/p.min.js");
-        modifyELPAIS();
-    }
-    else if(currentURL.includes("jornalvs.com.br")){
-        blockPaywallRequest("*://blockv4.fivewall.com.br/paywall.js*");
-    }
-    else if(
-        currentURL.includes("valor.globo.com") ||
-        window.location.href.includes("webcache.googleusercontent.com/search?q=cache:https://valor.globo.com/")
-    ){
-        modifyVLRECON();
-    }
-    else if(currentURL.includes("gauchazh.clicrbs.com.br") || currentURL.includes("especiais.zh.clicrbs")){
-        modifyGZH();
-    }
-    else if(currentURL.includes('jornaldocomercio.com')){
-        blockPaywallRequest("*://*.jornaldocomercio.com/src/inove/paywall.php");
-    }
-    else if(currentURL.includes('economist.com')){
-        blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
-    }
-    else if(
-        currentURL.includes('opopular.com.br') ||
-        window.location.href.includes("webcache.googleusercontent.com/search?q=cache:https://opopular.com.br/")
-    ){
-        modifyOPOPULAR();
-    }
-    else if(currentURL.includes('diariosm.com.br')){
-        modifyDIARIOSM();
-    }
-    else if(currentURL.includes('otempo.com.br')){
-        modifyOTEMPO();
-    }
-    else if(currentURL.includes("glamour.globo.com")){
-        blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
-    }
-    else if(currentURL.includes("degraoemgrao.blogfolha.uol.com.br")){
-        blockPaywallRequest("*://paywall.folha.uol.com.br/*");
-    }
-    else if(currentURL.includes("jc.ne10.uol.com.br")){
-        modyfyJORNALCOMERCIO();
-    }
-    else if(currentURL.includes("opovo.com.br")){
-        blockPaywallRequest("*://mais.opovo.com.br/auth*");
-        modifyOPOVO();
-    }
-    else if(currentURL.includes("correio24horas.com.br")){
-        blockPaywallRequest("*://correio-static.cworks.cloud/fileadmin/sites/correio24horas/js/all.js*")
-    }
-    else if(currentURL.includes("jornalnh.com.br")){
-        blockPaywallRequest("*://blockv4.fivewall.com.br/paywall.js*");
-    }
-    else if(currentURL.includes("atribuna.com.br")){
-        blockPaywallRequest("*://*.atribuna.com.br/assets/js*/materia.js");
-    }
-    else if(currentURL.includes("umdoisesportes.com.br")){
-        blockPaywallRequest("*://c2.piano.io/*");
-    }
-    else if(currentURL.includes("correiodopovo.com.br")){
-        blockPaywallRequest("*://paywall.correiodopovo.com.br/*");
-    }
-    else if(currentURL.includes("revistacasaejardim.globo.com")){
-        blockPaywallRequest("*://static.infoglobo.com.br/paywall/js/tiny.js*");
-    }
-    else if(currentURL.includes("saude.abril.com.br")){
-        blockPaywallRequest("*://*saude.abril.com.br/wp-content/plugins/abril-plugins/abril-paywall*");
-    }
-    else if(
-        currentURL.includes("gaz.com.br") ||
-        window.location.href.includes("webcache.googleusercontent.com/search?q=cache:https://www.gaz.com.br/")
-    ){
-        modifyGAZ();
-    }
-    else if(currentURL.includes("semprefamilia.com.br")){
-        blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
-    }
-    else if(currentURL.includes("uol.com.br")){
-        blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
-    }
-    else if(currentURL.includes("vocesa.abril.com.br")){
-        blockPaywallRequest("*://vocesa.abril.com.br/wp-content/plugins/abril-plugins/abril-paywall*");
-    }
+}else if(currentURL.includes("oglobo.globo.com") && !(window.location.href.includes("/epoca"))){
+    blockPaywallRequest("*://static.infoglobo.com.br/paywall/js/tiny.js");
+}
+else if(currentURL.includes("gazetadopovo.com.br")){
+    blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
+}
+else if(currentURL.includes("super.abril.com.br")){
+    blockPaywallRequest("*://super.abril.com.br/wp-content/plugins/abril-plugins/abril-paywall/js/*");
+}
+else if(currentURL.includes("quatrorodas.abril.com.br")){
+    blockPaywallRequest("*://quatrorodas.abril.com.br/wp-content/plugins/abril-plugins/abril-paywall/js/*")
+}
+else if(currentURL.includes("veja.abril.com.br") || (currentURL.includes("vejasp.abril"))){
+    blockPaywallRequest("*://veja.abril.com.br/wp-content/plugins/abril-plugins/abril-paywall/js/*")
+}
+else if(currentURL.includes("guiadoestudante.abril.com.br")){
+    blockPaywallRequest("*://guiadoestudante.abril.com.br/wp-content/plugins/abril-plugins/abril-paywall/js/*");
+}
+else if(currentURL.includes("exame.com")){
+    blockPaywallRequest("*://exame.com/wp-content/themes/exame-new/js/extd-acc.js*");
+    modifyEXAME();
+}
+else if(currentURL.includes("oglobo.globo.com") && window.location.href.includes("/epoca")){
+    //MIGROU PARA O DOMINIO OGLOBO.COM
+    blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
+}
+else if(currentURL.includes("revistagalileu.globo.com")){
+    blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
+}
+else if(currentURL.includes("epocanegocios.globo.com")){
+    blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
+}
+else if(currentURL.includes("revistamarieclaire.globo.com")){
+    blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
+}
+else if(currentURL.includes("globorural.globo.com")){
+    blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
+}
+else if(currentURL.includes("revistapegn.globo.com")){
+    blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
+}
+else if(currentURL.includes("jota.info")){
+    modifyJOTA();
+}
+else if(currentURL.includes("nsctotal.com.br")){
+    blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
+}
+else if(currentURL.includes("nytimes.com")){
+    modifyNYTIMES();
+}
+else if(currentURL.includes("elpais.com")){
+    blockPaywallRequest("*://*/arc/subs/p.min.js");
+    modifyELPAIS();
+}
+else if(currentURL.includes("jornalvs.com.br")){
+    blockPaywallRequest("*://blockv4.fivewall.com.br/paywall.js*");
+}
+// else if(
+//     currentURL.includes("valor.globo.com") ||
+//     window.location.href.includes("webcache.googleusercontent.com/search?q=cache:https://valor.globo.com/")
+// ){
+//     modifyVLRECON();
+// }
+else if(currentURL.includes("gauchazh.clicrbs.com.br") || currentURL.includes("especiais.zh.clicrbs")){
+    modifyGZH();
+}
+else if(currentURL.includes('jornaldocomercio.com')){
+    blockPaywallRequest("*://*.jornaldocomercio.com/src/inove/paywall.php");
+}
+else if(currentURL.includes('economist.com')){
+    blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
+}
+// else if(
+//     currentURL.includes('opopular.com.br') ||
+//     window.location.href.includes("webcache.googleusercontent.com/search?q=cache:https://opopular.com.br/")
+// ){
+//     modifyOPOPULAR();
+// }
+else if(currentURL.includes('diariosm.com.br')){
+    modifyDIARIOSM();
+}
+else if(currentURL.includes('otempo.com.br')){
+    modifyOTEMPO();
+}
+else if(currentURL.includes("glamour.globo.com")){
+    blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
+}
+else if(currentURL.includes("degraoemgrao.blogfolha.uol.com.br")){
+    blockPaywallRequest("*://paywall.folha.uol.com.br/*");
+}
+else if(currentURL.includes("jc.ne10.uol.com.br")){
+    modyfyJORNALCOMERCIO();
+}
+else if(currentURL.includes("opovo.com.br")){
+    blockPaywallRequest("*://mais.opovo.com.br/auth*");
+    modifyOPOVO();
+}
+else if(currentURL.includes("correio24horas.com.br")){
+    blockPaywallRequest("*://correio-static.cworks.cloud/fileadmin/sites/correio24horas/js/all.js*")
+}
+else if(currentURL.includes("jornalnh.com.br")){
+    blockPaywallRequest("*://blockv4.fivewall.com.br/paywall.js*");
+}
+else if(currentURL.includes("atribuna.com.br")){
+    blockPaywallRequest("*://*.atribuna.com.br/assets/js*/materia.js");
+}
+else if(currentURL.includes("umdoisesportes.com.br")){
+    blockPaywallRequest("*://c2.piano.io/*");
+}
+else if(currentURL.includes("correiodopovo.com.br")){
+    blockPaywallRequest("*://paywall.correiodopovo.com.br/*");
+}
+else if(currentURL.includes("revistacasaejardim.globo.com")){
+    blockPaywallRequest("*://static.infoglobo.com.br/paywall/js/tiny.js*");
+}
+else if(currentURL.includes("saude.abril.com.br")){
+    blockPaywallRequest("*://*saude.abril.com.br/wp-content/plugins/abril-plugins/abril-paywall*");
+}
+// else if(
+//     currentURL.includes("gaz.com.br") ||
+//     window.location.href.includes("webcache.googleusercontent.com/search?q=cache:https://www.gaz.com.br/")
+// ){
+//     modifyGAZ();
+// }
+else if(currentURL.includes("semprefamilia.com.br")){
+    blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
+}
+else if(currentURL.includes("uol.com.br")){
+    blockPaywallRequest("*://cdn.tinypass.com/api/tinypass.min.js*");
+}
+else if(currentURL.includes("vocesa.abril.com.br")){
+    blockPaywallRequest("*://vocesa.abril.com.br/wp-content/plugins/abril-plugins/abril-paywall*");
 }
 
 
